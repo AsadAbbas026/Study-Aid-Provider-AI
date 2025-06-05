@@ -1,0 +1,2 @@
+C:/Users/ALRASHIDS/Desktop/FYP/study_buddy/android/app/.cxx/Debug/p3v2l4u5/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/ALRASHIDS/Desktop/FYP/study_buddy/android/app/.cxx/Debug/p3v2l4u5/armeabi-v7a/CMakeFiles/rebuild_cache.dir

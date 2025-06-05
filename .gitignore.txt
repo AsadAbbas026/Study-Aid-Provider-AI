@@ -1,0 +1,15 @@
+*.json
+*.key
+*.pem
+*.env
+*.txt
+
+# Allow public README and configs
+!README.md
+!config/
+
+# Ignore HuggingFace tokens
+**/private.txt
+
+# Ignore Firebase keys
+**/study-buddy-system-firebase-adminsdk-*.json
