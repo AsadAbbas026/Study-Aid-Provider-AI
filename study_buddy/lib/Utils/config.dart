@@ -1,1 +1,1 @@
-const String baseUrl = 'http://16.170.3.242'; // Replace with your backend URL
+const String baseUrl = "http://192.168.1.10:5000"; // Replace with your backend URL

@@ -3,7 +3,7 @@ from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate, Sy
 from langchain_core.output_parsers import JsonOutputParser
 
 # Initialize Gemini
-chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
+chat_model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
 
 # Milestone prompt template
 milestone_prompt = ChatPromptTemplate.from_messages([

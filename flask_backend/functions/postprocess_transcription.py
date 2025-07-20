@@ -4,7 +4,7 @@ from langchain.schema import SystemMessage, HumanMessage
 import time
 import re
 
-chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
+chat_model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
 
 def extract_topics_and_subheadings(text):
     """Extracts the main topic and subheadings from transcribed text."""
@@ -143,7 +143,7 @@ def post_process_transcriptions(data):
     print("Main Topic:", topics + "\n")
     print("Subheadings:", subheadings)
 
-    formatted_notes = format_notes(data, subheadings)
+    formatted_notes = format_notes(data, subheadings, language_code=None)
     tags = extract_tags(formatted_notes)
 
     print("\nFormatted Notes:\n", formatted_notes)

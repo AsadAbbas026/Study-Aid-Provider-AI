@@ -171,7 +171,7 @@ def execute_audio_pipeline(filename):
     hybrid_vad(output_file, "cleaned_output.wav")
 
     normalize_audio("cleaned_output.wav", "normalized_output.wav")
-    normalized_file = "C:\\Users\\ALRASHIDS\\Desktop\\FYP\\study_buddy\\flask_backend\\services\\normalized_outputs.wav"
+    normalized_file = "normalized_outputs.wav"
     normalize_loudness("normalized_output.wav", normalized_file)
 
     denoised_file = "denoised.wav"

@@ -12,7 +12,7 @@ from langchain_core.output_parsers import JsonOutputParser
 from nltk.tokenize import sent_tokenize
 
 nltk.download('punkt')
-chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
+chat_model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
 
 
 # Prompt setup (moved outside the function)

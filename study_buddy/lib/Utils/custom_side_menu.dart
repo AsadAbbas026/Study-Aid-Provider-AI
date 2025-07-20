@@ -113,7 +113,7 @@ class CustomSideMenu extends StatelessWidget {
             ? CircleAvatar(
                 radius: 40.r,
                 backgroundImage: MemoryImage(
-                  base64Decode(userProfileController.profileImageBase64.value),
+                  base64Decode(Get.find<UserProfileController>().profileImageBase64.value),
                 ),
               )
             : CircleAvatar(

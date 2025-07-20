@@ -22,17 +22,3 @@ def process_quiz_result(question, expected_answer, user_answer):
     result = evaluate_answer(question, expected_answer, user_answer)
     # You can later parse or post-process this result here
     return result
-
-"""
-if __name__ == "__main__":
-    # Example usage
-    with open("transcription.txt", "r", encoding="utf-8") as file:
-        notes = file.read()
-    quiz = generate_quiz_from_notes(notes, num_questions=6)
-    print(quiz)
-    for q in quiz:
-        print(f"Question: {q['question']}")
-        print(f"Answer: {q['answer']}")
-        print(f"Type: {q['type']}")
-        print()
-"""

@@ -10,7 +10,7 @@ nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 
 # Setup the LLM
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
 
 prompt_template = PromptTemplate(
     input_variables=["sentence"],

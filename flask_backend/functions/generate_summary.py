@@ -4,7 +4,7 @@ from langchain.prompts import HumanMessagePromptTemplate, SystemMessagePromptTem
 from langchain_core.output_parsers import StrOutputParser
 import os
 
-chat_model = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
+chat_model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA")
 
 prompt = ChatPromptTemplate.from_messages([
     SystemMessagePromptTemplate.from_template("You are a helpful assistant that summarizes study notes within a single paragraph with only the key point concepts."),

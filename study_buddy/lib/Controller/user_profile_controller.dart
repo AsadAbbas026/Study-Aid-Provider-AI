@@ -183,21 +183,4 @@ class UserProfileController extends GetxController {
     }
   }
 
-  @override
-  void onClose() {
-    // Update persistent values one last time before disposal
-    
-    // Dispose all controllers
-    fullNameController.dispose();
-    emailController.dispose();
-    phoneController.dispose();
-    universityController.dispose();
-    oldPasswordController.dispose();
-    newPasswordController.dispose();
-    confirmPasswordController.dispose();
-    passwordPreviewController.dispose();
-    
-    super.onClose();
-  }
-
 }

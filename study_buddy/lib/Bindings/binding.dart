@@ -28,6 +28,6 @@ class Binding extends Bindings {
     Get.lazyPut(() => ScheduleController(), fenix: true);
     Get.lazyPut(() => GoalController(), fenix: true);
     Get.put(SideMenuController(), permanent: true);
-    Get.lazyPut(() => UserProfileController(), fenix: true);
+    Get.put(UserProfileController(), permanent: true);
   }
 }

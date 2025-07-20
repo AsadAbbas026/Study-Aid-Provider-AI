@@ -36,16 +36,11 @@ Example:
 
 # LLM Initialization
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-flash",
+    model="gemini-2.5-flash",
     api_key="AIzaSyCXxpGfK5AQxOWRcfTaKCb7KCHhG6AxojA"
 )
-
 # Evaluation chain
-evaluation_chain = LLMChain(
-    llm=llm,
-    prompt=prompt,
-    output_parser=json_parser
-)
+evaluation_chain = llm | prompt | json_parser
 
 # Evaluation function with error handling
 def evaluate_answer(question: str, expected_answer: str, user_answer: str) -> dict:

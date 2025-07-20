@@ -20,7 +20,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userProfileController = Get.put(UserProfileController());
+    final userProfileController = Get.find<UserProfileController>();
+
     return AppBar(
       title: Text(
         title,

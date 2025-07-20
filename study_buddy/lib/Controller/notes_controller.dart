@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'package:study_buddy/Utils/config.dart';
 import 'package:study_buddy/Controller/summaries_controller.dart';
 import 'package:study_buddy/Controller/quiz_controller.dart';
-
+  
 class NotesController extends GetxController {
   var notes = <Map<String, dynamic>>[].obs; // Observable list of notes
   var allNotes = <Map<String, dynamic>>[].obs; // Store all notes for resetting the search

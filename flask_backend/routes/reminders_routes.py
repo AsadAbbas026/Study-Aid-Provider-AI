@@ -114,3 +114,59 @@ def save_reminder():
     except Exception as e:
         print(f'🔥 Exception occurred: {e}')
         return jsonify({'error': 'Internal server error'}), 500
+    
+@reminder_bp.route('/update_reminder', methods=['PUT'])
+def update_reminder():
+    try:
+        data = request.get_json()
+
+        reminder_id = data.get('reminder_id')
+        title = data.get('title')
+        description = data.get('description')
+        date = data.get('date')
+        time = data.get('time')
+
+        if not reminder_id:
+            return jsonify({'error': 'Reminder ID is required'}), 400
+
+        # 🔍 Fetch the reminder
+        reminder = Reminders.query.get(reminder_id)
+        if not reminder:
+            return jsonify({'error': 'Reminder not found'}), 404
+
+        # ✅ Update fields only if they are present in request
+        if title: reminder.reminder_title = title
+        if description: reminder.description = description
+        if date: reminder.date = date
+        if time: reminder.time = time
+
+        db.session.commit()
+
+        return jsonify({'message': 'Reminder updated successfully'}), 200
+
+    except Exception as e:
+        print(f"🔥 Exception in update_reminder: {e}")
+        return jsonify({'error': 'Internal server error'}), 500
+
+@reminder_bp.route('/delete_reminder', methods=['DELETE'])
+def delete_reminder():
+    try:
+        data = request.get_json()
+        reminder_id = data.get('reminder_id')
+
+        if not reminder_id:
+            return jsonify({'error': 'Reminder ID is required'}), 400
+
+        # 🔍 Fetch reminder
+        reminder = Reminders.query.get(reminder_id)
+        if not reminder:
+            return jsonify({'error': 'Reminder not found'}), 404
+
+        db.session.delete(reminder)
+        db.session.commit()
+
+        return jsonify({'message': 'Reminder deleted successfully'}), 200
+
+    except Exception as e:
+        print(f"🔥 Exception in delete_reminder: {e}")
+        return jsonify({'error': 'Internal server error'}), 500

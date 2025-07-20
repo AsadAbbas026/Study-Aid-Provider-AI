@@ -20,7 +20,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   void initState() {
     super.initState();
-    controller = Get.put(UserProfileController());
+    controller = Get.find<UserProfileController>();
     controller.getUserProfile(widget.userId);
   }
 
@@ -100,7 +100,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             } else {
               return CircleAvatar(
                 radius: 50.r,
-                backgroundImage: const AssetImage('assets/images/default_profile.png'),
+                backgroundImage: const AssetImage('assets/images/profile_placeholder.png'),
               );
             }
           }),

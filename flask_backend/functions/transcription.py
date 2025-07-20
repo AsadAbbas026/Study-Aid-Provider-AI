@@ -196,8 +196,6 @@ def save_transcription_to_file(transcription, file_name="transcription.txt"):
 def execute_transcription(filepath, lang_code):
     """Executes the full transcription pipeline."""
     start_time = time.time()
-
-    file_path = "C:\\Users\\ALRASHIDS\\Desktop\\FYP\\study_buddy\\flask_backend\\services\\normalized_outputs.wav"
     
     duration = get_audio_duration(filepath)  # Store duration once
 
@@ -247,6 +245,8 @@ def execute_transcription(filepath, lang_code):
 
     return final_transcription, translated_text
 
+"""
 if __name__ == "__main__":
     filepath="C:\\Users\\ALRASHIDS\\Desktop\\New folder (8)\\flask_backend\\normalized_output.wav"
     execute_transcription(filepath, lang_code=None)
+"""

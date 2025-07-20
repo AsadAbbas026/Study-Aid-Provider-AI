@@ -229,27 +229,36 @@ class _StartQuizScreenState extends State<StartQuizScreen> with TickerProviderSt
                       ),
                     ],
                   ),
-                if (_started) ...[
-                  // Display current question dynamically based on the type
+                if (_started && _questions.isEmpty) ...[
+                  Center(child: CircularProgressIndicator()),
+                ] else if (_started && _questions.isNotEmpty) ...[
+                  SizedBox(height: 20.h),
                   Container(
-                    color: Colors.white,
-                    padding: EdgeInsets.all(16.sp),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
                     child: Column(
-                      spacing: 10.h,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Center(
                           child: Text(
                             "Question ${_currentQuestionIndex + 1}",
                             style: TextStyle(
                               fontSize: 22.sp,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
+                        SizedBox(height: 12.h), // ✅ spacing between title and question
+
                         Text(
                           _questions[_currentQuestionIndex].question,
-                          style: TextStyle(fontSize: 15.sp),
+                          style: TextStyle(fontSize: 16.sp),
                         ),
+
+                        SizedBox(height: 20.h), // ✅ spacing before options
                         if (_questions[_currentQuestionIndex].type == "true_false") ...[
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
